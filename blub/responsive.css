@@ -1,0 +1,13 @@
+@media (max-width: 760px) {
+  nav {
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    background: url("images/hero.png") center/cover no-repeat;
+  }
+}

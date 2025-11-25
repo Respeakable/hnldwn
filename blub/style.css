@@ -1,0 +1,118 @@
+:root {
+  /* Core Dark Greens */
+  --bg-primary: hsl(162 69% 14%); /* Deep Forest Green (#0B3D2E) */
+  --bg-secondary: hsl(128.78 28% 29%); /* Hunter Green (#355E3B) */
+  --border-subtle: hsl(125.81 17% 36%); /* Moss Green (#4C6B4F) */
+
+  /* Text Colors */
+  --text-on-dark: hsl(0 0% 100%); /* White (#FFFFFF) */
+  --text-on-light: hsl(0 0% 0%); /* Black (#000000) */
+
+  /* Background Neutral */
+  --bg-soft: hsl(60 20% 95%); /* Off-White (#F5F5F0) */
+
+  /* Accents */
+  --accent-gold: hsl(45.84 53% 67%); /* Pale Gold (#D7C27E) */
+  --accent-beige: hsl(41.82 37% 83%); /* Sand Beige (#E3D9C2) */
+  --accent-gray: hsl(156 4.9% 80%); /* Ash Gray (#C9CECC) */
+}
+
+/* resets */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-primary);
+}
+
+body {
+  background: url("images/heroMobile.png") center/cover no-repeat;
+}
+
+h1 {
+  margin: 0;
+}
+
+header {
+  position: relative;
+  z-index: 10;
+  @starting-style {
+    translate: 0px -5rem;
+    opacity: 0%;
+  }
+
+  transition: translate 1.5s ease, opacity 1.5s ease;
+}
+
+nav {
+  background-color: var(--bg-primary);
+  box-shadow: 0 2px var(--blur-small) hsl(0 0% 0% / var(--translucent-ish));
+  padding: 0.1rem 0;
+
+  display: flex;
+  z-index: 10;
+}
+
+nav a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  padding: var(--padding-small) var(--padding-small);
+  font-size: clamp(var(--small), 2vw, var(--mid));
+  display: inline-block;
+  z-index: 12;
+}
+nav a:hover {
+  background-color: var(--bg-secondary);
+}
+
+section {
+  color: var(--text-on-dark);
+}
+
+section.hero {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+#hero-text {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+
+  margin-top: 14rem;
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+}
+
+/* Gradient overlay fade */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  z-index: -1;
+}
+
+.text-hero {
+  font-size: clamp(calc(var(--small) - 0.1rem), 2vw, var(--mid));
+  margin: var(--padding-medium) auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.cont-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-medium);
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+  color: var(--accent-gold);
+}
